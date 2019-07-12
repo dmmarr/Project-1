@@ -19,10 +19,23 @@ body{
   h1{
     font-family: 'Notable', sans-serif;
     text-align: center;
+    
   }
   h3{
-    font-family: 'Bahianita', cursive;
+    font-family: 'Press Start 2P', cursive;
     text-align: center;
     text-shadow:  1px 1px #FF0000;
-    font-size:50px;
+    font-size:20px;
+    
   }
+  .avatar{
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+  
+  /* font-family: 'Notable', sans-serif; */
+  /* font-family: 'Permanent Marker', cursive; */
+  /* font-family: 'Rubik Mono One', sans-serif; */
+  /* font-family: 'Orbitron', sans-serif; */
+  /* font-family: 'Monoton', cursive; */
+  /* font-family: 'Press Start 2P', cursive; */
