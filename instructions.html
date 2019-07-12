@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>How to Play</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.js"></script>
+    <link rel="icon" href="./icon.png">
+    <link href="https://fonts.googleapis.com/css?family=Black+Ops+One|Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Monoton|Notable|Orbitron|Permanent+Marker|Press+Start+2P|Rubik+Mono+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/instructions.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="col-md-12">
+            <div class="col-md-1 float-right">
+                <div class="dropdown">
+                    <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenuButton"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Menu
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="./instructions.html">Instructions</a>
+                        <a class="dropdown-item" href="#">About Players</a>
+                        <a class="dropdown-item" href="./our-team.html">Our Team</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    </div>
+    <div class="container">
+        <img src="./assets/images/book.jpg" alt="book" style="width:82%;">
+        <div class="centered">
+            <h1><strong>Instructions:</strong></h1>
+            <hr>
+            <h3>Everytime game page is loaded, player will have options to pick his favorite player with pre-assigned
+                stats(gathered from NBA API) and compete with the other player(computer). This game will give player
+                following three actions:
+                <p>
+                <p>1.Shoot</p>
+                <p>2.Block</p>
+                <p>3.Assist</p>
+        </div>
+    </div>
+
+
+
+    </div>
+    <div class="container">
+            <div class="row">
+                <div class="col" id="images" style="text-align: center;">
+                    <img class="avatar" src="./assets/images/images/Antetokounmpo.jpg" alt="Avatar">
+                    <hr>
+                    <button  type="button" class="btn btn-danger" onclick="window.location.href = 'https://github.com/iTh1nk';">Giannis Antetokounmpo</button>
+                </div>
+                <div class="col" id="images" style="text-align: center;">
+                    <img class="avatar" src="./assets/images/images/Drummond.jpg" alt="Avatar">
+                    <hr>
+                    <button  type="button" class="btn btn-danger" onclick="window.location.href = 'https://github.com/dmmarr';">Andre Drummond</button>
+                </div>
+                <div class="col" id="images" style="text-align: center;">
+                    <img class="avatar" src="./assets/images/images/Leonard.jpg" alt="Avatar">
+                    <hr>
+                    <button  type="button" class="btn btn-danger" onclick="window.location.href = 'https://github.com/jephrocs';">Kawhi Leonard</button>
+                </div>
+                <div class="col" id="images" style="text-align: center;">
+                    <img class="avatar" src="./assets/images/images/Westbrook.jpg" alt="Avatar">
+                    <hr>
+                    <button  type="button" class="btn btn-danger" onclick="window.location.href = 'https://github.com/Fosterr334';">Russell Westbrook</button>
+                </div>
+                <div class="col" id="images" style="text-align: center;">
+                    <img class="avatar" src="./assets/images/images/curry.jpg" alt="Avatar">
+                    <hr>
+                    <button  type="button" class="btn btn-danger" onclick="window.location.href = 'https://github.com/anumasif1';">Steph Curry</button>
+                </div>
+                <div class="col" id="images" style="text-align: center;">
+                        <img class="avatar" src="./assets/images/images/davis.jpg" alt="Avatar">
+                        <hr>
+                        <button  type="button" class="btn btn-danger" onclick="window.location.href = 'https://github.com/dmmarr';">Anthony Davis</button>
+                    </div>
+                    <div class="col" id="images" style="text-align: center;">
+                            <img class="avatar" src="./assets/images/images/harden.jpg" alt="Avatar">
+                            <hr>
+                            <button  type="button" class="btn btn-danger" onclick="window.location.href = 'https://github.com/dmmarr';">James Harden</button>
+                        </div>
+                        <div class="col" id="images" style="text-align: center;">
+                                <img class="avatar" src="./assets/images/images/james.jpg" alt="Avatar">
+                                <hr>
+                                <button  type="button" class="btn btn-danger" onclick="window.location.href = 'https://github.com/dmmarr';">Lebron James</button>
+                            </div>
+                            <div class="col" id="images" style="text-align: center;">
+                                    <img class="avatar" src="./assets/images/images/lillard.jpg" alt="Avatar">
+                                    <hr>
+                                    <button  type="button" class="btn btn-danger" onclick="window.location.href = 'https://github.com/dmmarr';">Damian lillard</button>
+                                </div>
+            </div>
+
+</body>
+
+</html>

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .start-game-page{
 background-image: url(../images/pg1-background.jpg) !important;
 background-attachment: fixed;
@@ -57,3 +58,25 @@ background-size: 1552px;
     margin: 10px 0px 20px 200px !important;
 }
 
+=======
+img {
+    border-radius: 50%;
+    width: 90%;
+    height: 60%;
+  }
+  body{
+    background-image: url(../images/pg1-background.jpg) !important;
+    background-attachment: fixed;
+    background-size: 1552px; 
+  }
+h2{
+    font-family: 'Libre Barcode 128 Text', cursive;
+    color:white;
+    font-size: 116px;
+    margin: 20px;
+}
+/* #qrcode{
+    width: 100px;
+    height: 100px; */
+}
+>>>>>>> 50525a2727ccabafead91ca18f1f40b242e7a757
