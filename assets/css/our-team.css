@@ -1,0 +1,16 @@
+img {
+    border-radius: 50%;
+    width: 90%;
+    height: 60%;
+  }
+  body{
+    background-image: url(../images/pg1-background.jpg) !important;
+    background-attachment: fixed;
+    background-size: 1552px; 
+  }
+h2{
+    font-family: 'Libre Barcode 128 Text', cursive;
+    color:white;
+    font-size: 116px;
+    margin: 20px;
+}

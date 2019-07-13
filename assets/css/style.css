@@ -1,3 +1,90 @@
-body{
-background-color: black !important;
+.start-game-page{
+background-image: url(../images/pg1-background.jpg) !important;
+background-attachment: fixed;
+background-size: 1552px;
 }
+
+#title{
+    color:white;
+    margin-top: 250px !important;
+    text-align: center;
+    font-family:  'Press Start 2P', cursive !important;
+    
+}
+
+#start-button{
+    padding: 30px !important;
+    width: 300px !important;
+    font-size: 20px;
+    font-family: 'Notable', sans-serif !important;
+}
+
+#dropdownMenuButton{
+    /* position: relative;
+    float: right; */
+    right: 20px !important;
+}
+
+.navbar{
+    background-color: black !important;
+}
+
+.game-page{
+    background-image: url(../images/baskeball_championship.jpg) !important;
+    background-attachment: fixed;
+    background-size: 1552px;
+}
+
+.player-image{
+        width: 200px;
+        height: 200px;
+        margin: 10px 10px 10px 20px;
+        float: left;
+        padding: 0px;
+}
+    
+.players{
+    color: white !important;
+    float: right;
+    margin: 15px 15px 10px 0;
+    width: 300px;
+    padding: 15px;
+}
+
+#about-players{
+    color: white;
+    font-weight: bolder;
+    margin: 40px 190px 10px 190px !important;
+    background-color:#dc3545;
+    padding: 16px;
+}
+.players li:first-child{
+    list-style: none;
+}
+
+#message-container{  
+    width: 600px;
+    text-align: center;
+    font-weight: bolder;
+    color: white;
+    font-family: 'Rammetto One', cursive;
+    padding: 50px;
+    height: 400px;
+    margin: 0 auto!important;
+    margin-top: 150px!important;
+} 
+
+.game-lost{
+background-image: url("../images/basketball.jpg");
+}
+
+#end-game-message{
+    margin-top: 100px;
+}
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    [class*="container"] {
+      width: 100%;
+    }
+  }
