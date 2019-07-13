@@ -62,3 +62,29 @@ background-size: 1552px;
     list-style: none;
 }
 
+#message-container{  
+    width: 600px;
+    text-align: center;
+    font-weight: bolder;
+    color: white;
+    font-family: 'Rammetto One', cursive;
+    padding: 50px;
+    height: 400px;
+    margin: 0 auto!important;
+    margin-top: 150px!important;
+} 
+
+.game-lost{
+background-image: url("../images/basketball.jpg");
+}
+
+#end-game-message{
+    margin-top: 100px;
+}
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    [class*="container"] {
+      width: 100%;
+    }
+  }
