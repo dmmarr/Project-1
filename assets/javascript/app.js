@@ -118,14 +118,19 @@ function assignProperties(){
     }
 }
 function battleStart(){
-    $("#startButton").on("click", function () {
+    $("#myModal").on("shown.bs.modal", function () {
         selectedCharater();
         if (selectCount === 3){
+<<<<<<< HEAD
+            alert();
+            window.location.assign("battleScreen.html");
+=======
             window.location.assign("index.html");
+>>>>>>> 8683af5417a950791767cbeb0343927586e5e80c
             selectCount = 0;
         }
         else{
-            alert("need to have 3 players");
+            $('#myInput').trigger('focus')
             console.log(selectCount);
             selectCount = 0;
         }
@@ -576,3 +581,9 @@ h3Choice();
 
 
 
+
+
+
+$("#timerBattle").on("click", function() {
+
+})
