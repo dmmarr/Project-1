@@ -1,0 +1,40 @@
+html {
+    background-image        : url(./bg.jpg);
+    -webkit-background-size : cover;
+    -moz-background-size    : cover;
+    -o-background-size      : cover;
+    background-size         : cover;
+    min-width               : 100%;
+    min-height              : 100%;
+}
+body {
+    background-image        : url(./bg.jpg);
+    color: white;
+    -webkit-background-size : cover;
+    -moz-background-size    : cover;
+    -o-background-size      : cover;
+    background-size         : cover;
+    min-width               : 100%;
+    min-height              : 100%;
+}
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover th, #currytest {
+    background-color        : lightgreen;
+}
+.imgPick {
+    width                   : 180px;
+    height                  : 170px
+}
+table {
+    height                  : 150px;
+    width                   : 150px;
+    text-align              : center;
+    background-color        : white;
+    margin-right            : 6px;
+    margin-bottom           : 6px;
+}
+@import url(https://fonts.googleapis.com/css?family=VT323);
+body{
+  font-family               : 'VT323';
+  text-align                : center;
+  background                : #111 url(pg1-background.jpg)
+}
