@@ -74,7 +74,7 @@ function battleStart(){
     $("#startButton").on("click", function () {
         selectedCharater();
         if (selectCount === 3){
-            window.location.assign("index.html");
+            window.location.assign("battleScreen.html");
             selectCount = 0;
         }
         else{
@@ -394,7 +394,9 @@ function count(){
         h1Action(hero[0].choice);
         h2Action(hero[1].choice);
         h3Action(hero[2].choice);
+        youWin();
         bChoice();
+        gameOver();
     }
 }
 
@@ -465,8 +467,30 @@ function bArea(bATK){
     $("#hero2Health").text(hero[1].health);
     $("#hero3Health").text(hero[2].health);
 }
+
+function gameStart(){
+    $("#start-button").on("click", function () {
+        window.location.assign("charSelect.html");
+    });
+}
+
+function gameOver(){
+    if (hero[0].health<=0 && hero[1].health<=0 && hero[2].health<=0){
+        window.location.assign("game-end-lost.html");
+    }
+}
+
+function youWin(){
+    if (bossHealth<=0){
+        window.location.assign("end-game-win.html");
+    }
+}
+//Start Game
+gameStart();
+//Character select
 characterSelect();
 battleStart();
+//Battle Screen
 assignProperties();
 turnTimer();
 h1Choice();
