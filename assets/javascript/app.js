@@ -25,7 +25,7 @@ var hero =[
     imageUrl : "assets/images/GreenGem.png",
 }
 ]
-bossHealth = 1000;
+bossHealth = 100000;
 bossAttack = 25;
 var time = 10;
 var selectCount = 0;
@@ -115,13 +115,14 @@ function assignProperties(){
         hero[i6].defend = localStorage.getItem("defense"+i6);
         hero[i6].heal = localStorage.getItem("support"+i6);
         hero[i6].imageUrl = localStorage.getItem("image"+i6);
+        $("#hero"+i6+"Pic").attr("src",hero[i6].imageUrl);
     }
 }
 function battleStart(){
     $("#startButton").on("click", function () {
         selectedCharater();
         if (selectCount === 3){
-            window.location.assign("index.html");
+            window.location.assign("battleScreen.html");
             selectCount = 0;
         }
         else{
@@ -142,7 +143,7 @@ var characters = [
         support: 1,
         status: [],
         pick: 0,
-        imageUrl: "assets/images/bryant.jpg",   
+        imageUrl: "./assets/images/images/Westbrook.jpg",   
     },
     {
         name: "James Harden",
@@ -151,7 +152,7 @@ var characters = [
         defense: 1,
         support: 1,
         pick: 0,
-        imageUrl: "assets/images/bryant.jpg", 
+        imageUrl: "./assets/images/images/harden.jpg", 
     },
         {
         name: "Damian Lillard",
@@ -160,7 +161,7 @@ var characters = [
         defense: 1,
         support: 1,
         pick: 0,
-        imageUrl: "assets/images/bryant.jpg", 
+        imageUrl: "./assets/images/images/lillard.jpg", 
     },
     {
         name: "Giannis Antetokounmpo",
@@ -169,7 +170,7 @@ var characters = [
         defense: 1,
         support: 1,
         pick: 0,
-        imageUrl: "assets/images/bryant.jpg", 
+        imageUrl: "./assets/images/images/Antetokounmpo.jpg", 
     },
     {
         name: "Andre Drummond",
@@ -178,7 +179,7 @@ var characters = [
         defense: 1,
         support: 1,
         pick: 0,
-        imageUrl: "assets/images/bryant.jpg", 
+        imageUrl: "./assets/images/images/Drummond.jpg", 
     },
     {
         name: "Kawhi Leonard",
@@ -186,7 +187,7 @@ var characters = [
         attack: 1,
         defense: 1,
         support: 1,
-        imageUrl: "assets/images/bryant.jpg", 
+        imageUrl: "./assets/images/images/Leonard.jpg", 
     },
     {
         name: "LeBron James",
@@ -195,7 +196,7 @@ var characters = [
         defense: 1,
         support: 1,
         pick: 0,
-        imageUrl: "assets/images/bryant.jpg", 
+        imageUrl: "./assets/images/images/james.jpg", 
     },
     {
         name: "Anthony Davis",
@@ -204,7 +205,7 @@ var characters = [
         defense: 1,
         support: 1,
         pick: 0,
-        imageUrl: "assets/images/bryant.jpg", 
+        imageUrl: "./assets/images/images/davis.jpg", 
     },
     {
         name: "Stephen Curry",
@@ -213,23 +214,22 @@ var characters = [
         defense: 1,
         support: 1,
         pick: 0,
-        imageUrl: "assets/images/bryant.jpg", 
+        imageUrl: "./assets/images/images/curry2.png", 
     },
 ]
 
-//DO NOT REMOVE!!!!!!!
-//  for (var i2=0;i2<characters.length;i2++){
-//      getPlayerAtk(characters[i2].pId,i2);
+ for (var i2=0;i2<characters.length;i2++){
+     getPlayerAtk(characters[i2].pId,i2);
     
-//  }
-//  for (var i3=0;i3<characters.length;i3++){
-//     getPlayerDfc(characters[i3].pId,i3);
+ }
+ for (var i3=0;i3<characters.length;i3++){
+    getPlayerDfc(characters[i3].pId,i3);
     
-// }
-// for (var i4=0;i4<characters.length;i4++){
-//     getPlayerSpt(characters[i4].pId,i4);
+}
+for (var i4=0;i4<characters.length;i4++){
+    getPlayerSpt(characters[i4].pId,i4);
     
-// }
+}
 
 //average attack 8679
 //average defense 2306
@@ -413,15 +413,15 @@ else if (choice===3){
 //HERO ATTACK
 function hAttack(hATK){
     if (weatherStatus="heatwave"){
-        bossHealth = bossHealth - (Math.round(((hATK*hATK)/1000)+20));
+        bossHealth = bossHealth - (Math.round(((hATK*hATK)/100000)+20));
         $("#bossHealth").text(bossHealth);        
     }
     else if(weatherStatus="windy"){
-        bossHealth = bossHealth - (Math.round(((hATK*hATK)/1000)));
+        bossHealth = bossHealth - (Math.round(((hATK*hATK)/100000)));
         $("#bossHealth").text(bossHealth);        
     }
     else{
-        bossHealth = bossHealth - (Math.round(((hATK*hATK)/1000)+10));
+        bossHealth = bossHealth - (Math.round(((hATK*hATK)/100000)+10));
         $("#bossHealth").text(bossHealth);
     }
 };
@@ -429,17 +429,17 @@ function hAttack(hATK){
 //HERO HEAL
 function hHeal(hHEAL){
     if (weatherStatus="rainy"){
-        hero[0].health = hero[0].health + (Math.round((hHEAL*hHEAL)/1000)+40);
-        hero[1].health = hero[1].health + (Math.round((hHEAL*hHEAL)/1000)+40);
-        hero[2].health = hero[2].health + (Math.round((hHEAL*hHEAL)/1000)+40);
+        hero[0].health = hero[0].health + (Math.round((hHEAL*hHEAL)/1000000)+40);
+        hero[1].health = hero[1].health + (Math.round((hHEAL*hHEAL)/1000000)+40);
+        hero[2].health = hero[2].health + (Math.round((hHEAL*hHEAL)/1000000)+40);
         $("#hero1Health").text(hero[0].health);
         $("#hero2Health").text(hero[1].health);
         $("#hero3Health").text(hero[2].health);
     }
     else{
-    hero[0].health = hero[0].health + (Math.round((hHEAL*hHEAL)/1000)+20);
-    hero[1].health = hero[1].health + (Math.round((hHEAL*hHEAL)/1000)+20);
-    hero[2].health = hero[2].health + (Math.round((hHEAL*hHEAL)/1000)+20);
+    hero[0].health = hero[0].health + (Math.round((hHEAL*hHEAL)/1000000)+20);
+    hero[1].health = hero[1].health + (Math.round((hHEAL*hHEAL)/1000000)+20);
+    hero[2].health = hero[2].health + (Math.round((hHEAL*hHEAL)/1000000)+20);
     $("#hero1Health").text(hero[0].health);
     $("#hero2Health").text(hero[1].health);
     $("#hero3Health").text(hero[2].health);
