@@ -29,7 +29,54 @@ bossHealth = 1000;
 bossAttack = 25;
 var time = 10;
 var selectCount = 0;
+var weatherStatus = "Standard";
 //////////////////////////////////
+function getWeather(){
+    
+    var cityName = ["visalia", "laguna beach","nuuk","boston","seattle"]
+    var cPick = Math.floor(Math.random() * 6);
+    var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName[cPick] + "&appid=4098bcaff4e91d165d5b7086ff5b2036";
+    axios({
+        url: queryURL,
+        method: "GET",
+    }).then(function (result) {
+        //grab temp Kelvin as factor that affecting players' status
+        var tempK = (result.data.main.temp);
+        //convert K to F
+        var tempF = Math.floor((tempK - 273.15) * 9/5 + 32);
+        var humid = (result.data.main.humidity);
+        var windy = (result.data.wind.speed)
+
+        if (tempF>90){
+            $("#weather").attr("src","./assets/images/sun-use.png");
+            weatherStatus="heatwave";
+            console.log(weatherStatus);
+        }
+        else if (tempF<40){
+            $("#weather").attr("src","./assets/images/snow-use.png");
+            weatherStatus="snow";
+            console.log(weatherStatus);
+        }
+        else if (humid>70){
+            $("#weather").attr("src","./assets/images/thunder.png");
+            weatherStatus="rainy";
+            console.log(weatherStatus);
+        }
+        else if (windy>7){
+            $("#weather").attr("src","./assets/images/wind-use.png");
+            weatherStatus="windy";
+            console.log(weatherStatus);
+        }
+        else{
+            $("#weather").attr("src","./assets/images/Sun-summer-nature-weather-512.png");
+            weatherStatus="standard";
+            console.log(weatherStatus);
+        }
+    }).catch(function (err) {
+        console.error(err)
+    })
+}
+    
 function characterSelect(){
 $(document).on("click", ".imgPick", function () {
     var playerId = $(this).attr("id");
@@ -74,7 +121,7 @@ function battleStart(){
     $("#startButton").on("click", function () {
         selectedCharater();
         if (selectCount === 3){
-            window.location.assign("battleScreen.html");
+            window.location.assign("index.html");
             selectCount = 0;
         }
         else{
@@ -88,14 +135,14 @@ function battleStart(){
 
 var characters = [
     {
-      name: "Russell Westbrook",
-      pId: 544,
-      attack: 1,
-      defense: 1,
-      support: 1,
-      status: [],
-      pick: 0,
-      imageUrl: "assets/images/bryant.jpg",   
+        name: "Russell Westbrook",
+        pId: 544,
+        attack: 1,
+        defense: 1,
+        support: 1,
+        status: [],
+        pick: 0,
+        imageUrl: "assets/images/bryant.jpg",   
     },
     {
         name: "James Harden",
@@ -106,7 +153,7 @@ var characters = [
         pick: 0,
         imageUrl: "assets/images/bryant.jpg", 
     },
-     {
+        {
         name: "Damian Lillard",
         pId: 319,
         attack: 1,
@@ -177,11 +224,11 @@ var characters = [
 //  }
 //  for (var i3=0;i3<characters.length;i3++){
 //     getPlayerDfc(characters[i3].pId,i3);
-   
+    
 // }
 // for (var i4=0;i4<characters.length;i4++){
 //     getPlayerSpt(characters[i4].pId,i4);
-   
+    
 // }
 
 //average attack 8679
@@ -365,18 +412,38 @@ else if (choice===3){
 
 //HERO ATTACK
 function hAttack(hATK){
-    bossHealth = bossHealth - (Math.round(((hATK*hATK)/1000)+10));
-    $("#bossHealth").text(bossHealth);
+    if (weatherStatus="heatwave"){
+        bossHealth = bossHealth - (Math.round(((hATK*hATK)/1000)+20));
+        $("#bossHealth").text(bossHealth);        
+    }
+    else if(weatherStatus="windy"){
+        bossHealth = bossHealth - (Math.round(((hATK*hATK)/1000)));
+        $("#bossHealth").text(bossHealth);        
+    }
+    else{
+        bossHealth = bossHealth - (Math.round(((hATK*hATK)/1000)+10));
+        $("#bossHealth").text(bossHealth);
+    }
 };
 
 //HERO HEAL
 function hHeal(hHEAL){
+    if (weatherStatus="rainy"){
+        hero[0].health = hero[0].health + (Math.round((hHEAL*hHEAL)/1000)+40);
+        hero[1].health = hero[1].health + (Math.round((hHEAL*hHEAL)/1000)+40);
+        hero[2].health = hero[2].health + (Math.round((hHEAL*hHEAL)/1000)+40);
+        $("#hero1Health").text(hero[0].health);
+        $("#hero2Health").text(hero[1].health);
+        $("#hero3Health").text(hero[2].health);
+    }
+    else{
     hero[0].health = hero[0].health + (Math.round((hHEAL*hHEAL)/1000)+20);
     hero[1].health = hero[1].health + (Math.round((hHEAL*hHEAL)/1000)+20);
     hero[2].health = hero[2].health + (Math.round((hHEAL*hHEAL)/1000)+20);
     $("#hero1Health").text(hero[0].health);
     $("#hero2Health").text(hero[1].health);
     $("#hero3Health").text(hero[2].health);
+    }
 }
 
 
@@ -397,6 +464,7 @@ function count(){
         youWin();
         bChoice();
         gameOver();
+        getWeather();
     }
 }
 
@@ -428,6 +496,12 @@ function bChoice(){
 }
 //BOSS SINGLE ATTACK
 function bSingle(bATK){
+    if (weatherStatus="snow"){
+        bATK = bATK-300;
+            if (bATK<0){
+                bATK=1;   
+            }
+    }
     var target = Math.floor(Math.random() * 3);
     //BLOCKING
     if (hero[0].choice===2){
@@ -467,7 +541,6 @@ function bArea(bATK){
     $("#hero2Health").text(hero[1].health);
     $("#hero3Health").text(hero[2].health);
 }
-
 function gameStart(){
     $("#start-button").on("click", function () {
         window.location.assign("charSelect.html");
@@ -485,6 +558,8 @@ function youWin(){
         window.location.assign("end-game-win.html");
     }
 }
+
+    
 //Start Game
 gameStart();
 //Character select
@@ -492,6 +567,7 @@ characterSelect();
 battleStart();
 //Battle Screen
 assignProperties();
+getWeather();
 turnTimer();
 h1Choice();
 h2Choice();
