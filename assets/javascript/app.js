@@ -71,14 +71,15 @@ function assignProperties(){
     }
 }
 function battleStart(){
-    $("#startButton").on("click", function () {
+    $("#myModal").on("shown.bs.modal", function () {
         selectedCharater();
         if (selectCount === 3){
+            alert();
             window.location.assign("battleScreen.html");
             selectCount = 0;
         }
         else{
-            alert("need to have 3 players");
+            $('#myInput').trigger('focus')
             console.log(selectCount);
             selectCount = 0;
         }
@@ -500,3 +501,9 @@ h3Choice();
 
 
 
+
+
+
+$("#timerBattle").on("click", function() {
+
+})
