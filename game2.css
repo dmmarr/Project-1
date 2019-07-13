@@ -1,0 +1,15 @@
+body{
+    background-image: url(./assets/images/basketball.jpg) !important;
+    background-attachment: fixed;
+    background-size: 1552px;
+    }
+  
+  #weather {
+    margin-left: 80%;
+    top: 8px;
+    right: 16px;
+    width: 30%;
+    height: 10%;
+  }
+ 
+  
