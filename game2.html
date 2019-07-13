@@ -24,11 +24,101 @@
 </head>
 
 <body>
+    <!-- weather icon -->
      <div class="container">
-        <div>
+        <div style="float: left; margin-left: 50%;">
             <img src="./assets/images/Sun-summer-nature-weather-512.png" id="weather" alt="weather">
         </div>
+
+        <!-- BOSS TO BEAT -->
+        <div id="battleArea">
+            <table cellpadding="0" cellspacing="0" class="table-hover" style="margin-left: 40%; margin-bottom: 110px;">
+                <tbody>
+                    <tr>
+                        <td>
+                            <a href="#"><img src="./assets/images/players/jordan.jpg" class="imgPick"></a>
+                            <div style="color: black; background-image: url(./assets/images/hpbg.jpg);background-repeat: no-repeat; background-size: 100% 100%;"
+                                id="bossHP">HP: 100%</div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- OWN CHARACTORS -->
+            <table cellpadding="0" cellspacing="0" style="float:left; margin-left: 2%; margin-right: 1%;"
+                class="table-hover">
+                <tbody>
+                    <tr>
+                        <td style="color: black;">
+                            <a><img src="./assets/images/players/curry.png" class="imgPick"></a>
+                            <div>HP: 100%</div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table style="width:0%; float: left; margin-right: 1px;">
+                <tbody>
+                    <tr>
+                        <td style="background-color: black;"><button class="btn btn-success" id="attack"
+                                style="margin-bottom: 10px;">Attack &nbsp;</button><br>
+                            <button class="btn btn-success" style="margin-bottom: 10px;">Defend </button><br>
+                            <button class="btn btn-success">Support</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <table cellpadding="0" cellspacing="0" style="float:left; margin-left: 10%; margin-right: 1%;"
+                class="table-hover">
+                <tbody>
+                    <tr>
+                        <td style="color: black;">
+                            <a><img src="./assets/images/players/Westbrook.jpg" class="imgPick"></a>
+                            <div>HP: 100%</div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table style="width:0%; float: left; margin-right: 1px;">
+                <tbody>
+                    <tr>
+                        <td style="background-color: black;"><button class="btn btn-success" id="attack"
+                                style="margin-bottom: 10px;">Attack &nbsp;</button><br>
+                            <button class="btn btn-success" style="margin-bottom: 10px;">Defend </button><br>
+                            <button class="btn btn-success">Support</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <table cellpadding="0" cellspacing="0" style="float:left; margin-left: 10%; margin-right: 1%;"
+                class="table-hover">
+                <tbody>
+                    <tr>
+                        <td style="color: black;">
+                            <a><img src="./assets/images/players/harden.jpg" class="imgPick"></a>
+                            <div>HP: 100%</div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table style="width:0%; float: left;">
+                <tbody>
+                    <tr>
+                        <td style="background-color: black;"><button class="btn btn-success" id="attack"
+                                style="margin-bottom: 10px;">Attack &nbsp;</button><br>
+                            <button class="btn btn-success" style="margin-bottom: 10px;">Defend </button><br>
+                            <button class="btn btn-success">Support</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
+
+
+
+<script src="./game2.js"></script>
 </body>
 
 </html>
