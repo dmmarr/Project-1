@@ -1,0 +1,59 @@
+.start-game-page{
+background-image: url(../images/pg1-background.jpg) !important;
+background-attachment: fixed;
+background-size: 1552px;
+}
+
+#title{
+    color:white;
+    margin-top: 250px !important;
+    text-align: center;
+    font-family:  'Press Start 2P', cursive !important;
+    
+}
+
+#start-button{
+    padding: 30px !important;
+    width: 300px !important;
+    font-size: 20px;
+    font-family: 'Notable', sans-serif !important;
+}
+
+#dropdownMenuButton{
+    /* position: relative;
+    float: right; */
+    right: 20px !important;
+}
+
+.navbar{
+    background-color: black !important;
+}
+
+.game-page{
+    background-image: url(../images/baskeball_championship.jpg) !important;
+    background-attachment: fixed;
+    background-size: 1552px;
+}
+
+.player-image{
+        width: 200px;
+        height: 200px;
+        margin: 10px 10px 10px 10px;
+        float: left;
+        padding: 0px;
+}
+    
+.players{
+    color: white !important;
+    float: right;
+    margin: 15px 15px 10px 0;
+    width: 300px;
+    padding: 15px;
+}
+
+#about-players{
+    color: white;
+    font-weight: bolder;
+    margin: 10px 0px 20px 200px !important;
+}
+
