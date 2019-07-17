@@ -1,15 +1,49 @@
-body{
-    background-image: url(./assets/images/basketball.jpg) !important;
-    background-attachment: fixed;
-    background-size: 1552px;
-    }
-  
-  #weather {
-    margin-left: 80%;
-    top: 8px;
-    right: 16px;
-    width: 30%;
-    height: 10%;
-  }
- 
-  
+html {
+  background-image: url(./assets/images/basketball.jpg);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+body {
+  background-image: url(./assets/images/basketball.jpg) !important;
+  background-attachment: fixed;
+  background-size: 1552px;
+  color: white;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+#weather {
+  margin-left: 80%;
+  top: 8px;
+  right: 16px;
+  width: 40%;
+  height: 20%;
+}
+
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+  background-color: lightgreen;
+}
+
+.imgPick {
+  width: 150px;
+  height: 140px
+}
+
+table {
+  height: 150px;
+  width: 150px;
+  text-align: center;
+  background-color: white;
+  margin-right: 6px;
+  margin-bottom: 6px;
+}
+
